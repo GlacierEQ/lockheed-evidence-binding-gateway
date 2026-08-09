@@ -11,3 +11,7 @@ Completes the Lockheed triad: dual-key fence + thread isolator + evidence bindin
 Independent GlacierEQ reference only. No company affiliation, employment, deployment,
 endorsement, clearance, or proprietary access is claimed. Names label public problem spaces.
 
+
+## Quality honesty
+
+See [QUALITY.md](./QUALITY.md). This is a leveled **reference mechanism**, not a production system or employer affiliation claim.
