@@ -1,1 +1,22 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+  "capability_family": "evidence_bound_action_authorization",
+  "capabilities": [
+    "content-addressed-evidence-snapshots",
+    "monotonic-evidence-versioning",
+    "decision-to-evidence-hash-binding",
+    "multi-evidence-authorization",
+    "TOCTOU-version-drift-refusal",
+    "evidence-mutation-refusal",
+    "authorization-audit-trail"
+  ],
+  "evidence_refs": [
+    "src/evidence_gateway.py",
+    "tests/test_evidence_gateway.py",
+    "tests/test_adversarial.py",
+    "machine/proof_receipt.json",
+    "machine/canonical-position.json"
+  ],
+  "truth_boundary": "Repository-local evidence-binding mechanisms only. No Lockheed Martin adoption, production mission-assurance deployment, or exercised integration with sibling repositories is implied."
+}
