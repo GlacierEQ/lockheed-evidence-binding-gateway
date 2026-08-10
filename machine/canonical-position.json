@@ -1,0 +1,60 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+  "position_state": "RESOLVED",
+  "role": "company_specific_specialist_system",
+  "company_target": "Lockheed Martin",
+  "canonical_identity": "evidence-binding-gateway",
+  "unique_value": [
+    "authorization is bound to immutable evidence content hashes and monotonic evidence versions rather than mutable evidence identifiers alone",
+    "single- and multi-evidence decisions fail closed when evidence disappears, changes content, or advances version after binding",
+    "versioned immutable snapshot history turns evidence drift into an explicit authorization failure instead of a hidden TOCTOU condition",
+    "authorization outcomes are retained in a repository-local audit trail with deterministic evidence fingerprints"
+  ],
+  "lineage_distinction": {
+    "GlacierEQ/lockheed-dual-key-actuator-fence": "owns dual-control side-effect authority and short-lived actuator grants; complementary actuation boundary, not evidence snapshot provenance",
+    "GlacierEQ/lockheed-mission-thread-isolator": "owns cross-thread mutable-authority isolation and explicit exports; complementary isolation boundary, not evidence binding"
+  },
+  "capability_contribution": {
+    "family": "evidence_bound_action_authorization",
+    "extractable_mechanisms": [
+      "content-addressed evidence snapshots",
+      "monotonic evidence versioning",
+      "decision-to-evidence hash binding",
+      "multi-evidence authorization",
+      "TOCTOU drift refusal",
+      "authorization audit trail"
+    ],
+    "ownership": "This repository remains the owning Lockheed-specialist implementation of evidence-bound action authorization; capability extraction preserves repository identity and lineage."
+  },
+  "integration_policy": {
+    "preserve_repository_identity": true,
+    "preserve_lineage": true,
+    "presentation_independent": true,
+    "size_or_loc_not_dispositive": true,
+    "absorption_requires_functional_equivalence": true,
+    "absorption_requires_proof_equivalence": true
+  },
+  "relationships": [
+    {"repository": "GlacierEQ/lockheed-dual-key-actuator-fence", "kind": "COMPLEMENTARY_ACTUATION_AUTHORITY_COMPONENT", "integration_state": "NOT_CLAIMED"},
+    {"repository": "GlacierEQ/lockheed-mission-thread-isolator", "kind": "COMPLEMENTARY_AUTHORITY_ISOLATION_COMPONENT", "integration_state": "NOT_CLAIMED"}
+  ],
+  "next_evolution": "Add signed evidence-source identities, freshness/expiry policy, external content-addressed snapshot storage, and source-quorum requirements while preserving deterministic content/version drift refusal.",
+  "evidence_refs": [
+    "README.md",
+    "ISSUE_CONTRACT.md",
+    "src/evidence_gateway.py",
+    "tests/test_evidence_gateway.py",
+    "tests/test_adversarial.py",
+    "machine/target-contract.json",
+    "machine/proof_receipt.json",
+    "machine/operability_receipt.json",
+    "machine/promotion_authority.json"
+  ],
+  "nonclaims": [
+    "no Lockheed Martin affiliation",
+    "no Lockheed Martin internal architecture claim",
+    "not a production mission-assurance gateway",
+    "repository relationships do not imply exercised integration"
+  ]
+}
