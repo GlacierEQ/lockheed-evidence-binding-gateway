@@ -1,0 +1,28 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "b3c15b8232e0db4aa3a49f18604b8ddc80357d9d32b499ec080202b75b312cba",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "evidence_gateway",
+    "ok": true,
+    "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+    "smoke": {
+      "args": [
+        "'sample_decision_id'",
+        "'sample_action'",
+        "[]"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "class",
+      "method": "bind_many",
+      "module_local": true,
+      "name": "EvidenceBindingGateway",
+      "result": "MultiBoundDecision(decision_id='sample_decision_id', action='sample_action', bindings=())"
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

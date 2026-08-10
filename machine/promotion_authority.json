@@ -1,0 +1,11 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+  "source_sha": "b3c15b8232e0db4aa3a49f18604b8ddc80357d9d32b499ec080202b75b312cba",
+  "proof_receipt_digest": "6776fe42a5dfd710634fc1858c3702b3c5a38dbf81c5bdebc6982c0ebd5cc7e5",
+  "not_after": 1788927149.234226,
+  "mac": "c99d1608c0db9d2269c489d9b2c0b9c291fe05e910d2393a27ebaaab12a5677e",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true,
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
+}
