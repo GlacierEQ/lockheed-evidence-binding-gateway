@@ -1,0 +1,38 @@
+{
+  "schema": "glaciereq.repo-evolution-receipt.v1",
+  "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
+  "consumed_cursor": "next:signed_evidence_identity_freshness_external_content_addressed_storage_source_quorum",
+  "candidate_source_sha": "c862c106343c1b80c696904b09225f0f44d125ba",
+  "workflow_run": 31542803628,
+  "python": "PASS",
+  "implemented": [
+    "legacy local version/hash evidence gateway preserved unchanged",
+    "root-signed source credentials bound to source key role and validity interval",
+    "source-signed evidence attestations bound to evidence identity version content digest freshness nonce and credential fingerprint",
+    "hard future-skew max-age credential-expiry and attestation-expiry refusal",
+    "distinct-source quorum with required-role constraints",
+    "filesystem-backed content-addressed store that externalizes evidence bytes from gateway state and verifies digest on write and readback",
+    "binding freshness deadline derived from credential attestation and max-age limits",
+    "authorization re-reads exact CAS bytes by digest and refuses missing corrupt or stale evidence",
+    "deterministic signed-evidence receipts and audit trail"
+  ],
+  "adversarial_proof": [
+    "duplicate source attestations cannot inflate quorum",
+    "multiple sensor sources cannot substitute for a required reviewer role",
+    "stale future and expired attestations fail closed",
+    "tampered source signature and tampered root credential fail closed",
+    "evidence identity version and content drift fail before binding",
+    "binding freshness expires after the earliest authoritative deadline",
+    "missing and corrupt CAS objects refuse after binding",
+    "invalid digest/path input is rejected by the CAS",
+    "expired credentials and credentials issued by a different root authority fail closed"
+  ],
+  "truth_boundaries": [
+    "HMAC source credentials and signatures are deterministic independent-reference identity mechanisms rather than production PKI or KMS-backed identity",
+    "the directory CAS proves durable filesystem externalization and digest readback but not cloud object-store replication provider durability or remote availability",
+    "source-key revocation is not yet modeled as a live revocation feed after credential issuance",
+    "quorum evaluation is local to one gateway instance and is not distributed or consensus reconciled",
+    "no Lockheed Martin affiliation adoption production deployment proprietary access or internal architecture knowledge is claimed"
+  ],
+  "next_cursor": "next:remote_kms_pki_identity_source_key_revocation_freshness_provider_attested_object_store_replication_and_distributed_source_quorum_reconciliation"
+}
