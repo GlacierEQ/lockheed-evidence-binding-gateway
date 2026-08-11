@@ -5,18 +5,44 @@
     "family": "elite-estate"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
     "deployed": false
   },
+  "mechanism": {
+    "legacy_surface": "local version/hash evidence binding remains backward compatible",
+    "signed_surface": "root-credentialed source attestations, freshness, distinct-source quorum, and content-addressed externalized readback",
+    "authority_bounds": [
+      "source credential must match source ID key ID role and validity window",
+      "source signature must bind exact evidence ID version content digest freshness nonce and credential fingerprint",
+      "freshness must satisfy future-skew max-age credential-expiry and attestation-expiry policy",
+      "source quorum counts distinct source identities and required roles",
+      "CAS digest written must equal the signed content digest and exact bytes are re-read before authorization",
+      "authorization refuses stale missing or corrupt CAS evidence"
+    ]
+  },
+  "proof": {
+    "consumed_cursor": "next:signed_evidence_identity_freshness_external_content_addressed_storage_source_quorum",
+    "candidate_source_sha": "c862c106343c1b80c696904b09225f0f44d125ba",
+    "workflow_run": 31542803628,
+    "python": "PASS",
+    "receipt": "machine/evolution-receipts/2026-08-11-signed-source-quorum-cas.json"
+  },
+  "next_cursor": "next:remote_kms_pki_identity_source_key_revocation_freshness_provider_attested_object_store_replication_and_distributed_source_quorum_reconciliation",
   "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+    "no Lockheed Martin affiliation",
+    "no production deployment without receipt",
+    "no production PKI or KMS-backed source identity",
+    "no live source-key revocation feed after credential issuance",
+    "no cloud object-store replication provider-managed durability or remote availability claim",
+    "no distributed or consensus-reconciled source quorum",
+    "no proprietary access or internal architecture knowledge"
   ],
   "donor_plan": {
     "mode": "none",
     "donors": []
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "frozen_at": "2026-08-10T04:12Z",
+  "refreshed_at": "2026-08-11T22:39Z"
 }

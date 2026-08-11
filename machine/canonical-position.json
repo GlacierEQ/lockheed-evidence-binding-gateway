@@ -7,9 +7,12 @@
   "canonical_identity": "evidence-binding-gateway",
   "unique_value": [
     "authorization is bound to immutable evidence content hashes and monotonic evidence versions rather than mutable evidence identifiers alone",
-    "single- and multi-evidence decisions fail closed when evidence disappears, changes content, or advances version after binding",
+    "single- and multi-evidence decisions fail closed when evidence disappears changes content or advances version after binding",
     "versioned immutable snapshot history turns evidence drift into an explicit authorization failure instead of a hidden TOCTOU condition",
-    "authorization outcomes are retained in a repository-local audit trail with deterministic evidence fingerprints"
+    "authorization outcomes are retained in a repository-local audit trail with deterministic evidence fingerprints",
+    "source identity and evidence identity are signed and freshness-bounded before evidence can join authorization quorum",
+    "source quorum counts distinct identities and required roles rather than repeated attestations",
+    "evidence bytes are externalized to content-addressed storage and exact bytes are re-read by digest before authorization"
   ],
   "lineage_distinction": {
     "GlacierEQ/lockheed-dual-key-actuator-fence": "owns dual-control side-effect authority and short-lived actuator grants; complementary actuation boundary, not evidence snapshot provenance",
@@ -23,7 +26,13 @@
       "decision-to-evidence hash binding",
       "multi-evidence authorization",
       "TOCTOU drift refusal",
-      "authorization audit trail"
+      "authorization audit trail",
+      "root-signed source credentials",
+      "source-signed evidence attestations",
+      "freshness-bounded evidence authority",
+      "distinct-source required-role quorum",
+      "externalized content-addressed evidence readback",
+      "post-bind CAS tamper and missing-object refusal"
     ],
     "ownership": "This repository remains the owning Lockheed-specialist implementation of evidence-bound action authorization; capability extraction preserves repository identity and lineage."
   },
@@ -39,14 +48,23 @@
     {"repository": "GlacierEQ/lockheed-dual-key-actuator-fence", "kind": "COMPLEMENTARY_ACTUATION_AUTHORITY_COMPONENT", "integration_state": "NOT_CLAIMED"},
     {"repository": "GlacierEQ/lockheed-mission-thread-isolator", "kind": "COMPLEMENTARY_AUTHORITY_ISOLATION_COMPONENT", "integration_state": "NOT_CLAIMED"}
   ],
-  "next_evolution": "Add signed evidence-source identities, freshness/expiry policy, external content-addressed snapshot storage, and source-quorum requirements while preserving deterministic content/version drift refusal.",
+  "evolution": {
+    "consumed_cursor": "next:signed_evidence_identity_freshness_external_content_addressed_storage_source_quorum",
+    "candidate_source_sha": "c862c106343c1b80c696904b09225f0f44d125ba",
+    "workflow_run": 31542803628,
+    "receipt": "machine/evolution-receipts/2026-08-11-signed-source-quorum-cas.json"
+  },
+  "next_evolution": "Replace reference HMAC identity with remotely verifiable PKI/KMS-backed source identity and live key revocation freshness, add provider-attested replicated object storage, and reconcile source quorum across gateway instances without weakening exact evidence/version/content/freshness binding.",
   "evidence_refs": [
     "README.md",
     "ISSUE_CONTRACT.md",
     "src/evidence_gateway.py",
+    "src/signed_evidence_gateway.py",
     "tests/test_evidence_gateway.py",
+    "tests/test_signed_evidence_gateway.py",
     "tests/test_adversarial.py",
     "machine/target-contract.json",
+    "machine/evolution-receipts/2026-08-11-signed-source-quorum-cas.json",
     "machine/proof_receipt.json",
     "machine/operability_receipt.json",
     "machine/promotion_authority.json"
@@ -55,6 +73,10 @@
     "no Lockheed Martin affiliation",
     "no Lockheed Martin internal architecture claim",
     "not a production mission-assurance gateway",
-    "repository relationships do not imply exercised integration"
+    "repository relationships do not imply exercised integration",
+    "HMAC source credentials are reference identity rather than production PKI or KMS identity",
+    "directory CAS proves filesystem externalization and digest readback rather than cloud replication or provider-managed durability",
+    "source-key revocation is not yet a live post-issuance feed",
+    "source quorum is local rather than distributed or consensus reconciled"
   ]
 }
