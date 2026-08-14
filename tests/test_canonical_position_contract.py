@@ -40,7 +40,16 @@ class CanonicalPositionContractTests(unittest.TestCase):
         self.assertTrue(all(row["integration_state"] == "NOT_CLAIMED" for row in siblings.values()))
 
     def test_evolution_and_public_boundary_are_material(self):
-        self.assertIn("signed evidence-source identities", POSITION["next_evolution"])
+        evolution = POSITION["evolution"]
+        self.assertEqual(
+            evolution["consumed_cursor"],
+            "next:signed_evidence_identity_freshness_external_content_addressed_storage_source_quorum",
+        )
+        next_evolution = POSITION["next_evolution"]
+        self.assertIn("PKI/KMS-backed source identity", next_evolution)
+        self.assertIn("live key revocation", next_evolution)
+        self.assertIn("provider-attested replicated object storage", next_evolution)
+        self.assertIn("reconcile source quorum", next_evolution)
         self.assertIn("no Lockheed Martin affiliation", POSITION["nonclaims"])
         self.assertIn("No Lockheed Martin adoption", CAPABILITIES["truth_boundary"])
 
