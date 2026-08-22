@@ -14,12 +14,12 @@
     "OPERABLE_AND_OBSERVABLE": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "existing scripts/operate.py preserved; signed path externalizes/re-reads CAS bytes and emits deterministic signed-evidence audit receipts"},
     "PROOF_RECEIPT_BOUND": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "machine/proof_receipt.json retained + machine/evolution-receipts/2026-08-11-signed-source-quorum-cas.json"},
     "AUTHORITY_BOUND": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "source authority requires signed identity/attestation, freshness, distinct-source quorum, and exact CAS readback; PKI/KMS, live revocation, remote replicated CAS, and distributed quorum remain explicit next boundaries"},
-    "PROJECTION_TRUTH_CLOSED": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "canonical position preserves no Lockheed affiliation/adoption, no production PKI/KMS, no cloud durability/replication, and no distributed quorum claim"},
-    "CANONICAL_POSITION_RESOLVED": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "machine/canonical-position.json preserves evidence-binding-gateway ownership and triad lineage while binding signed source quorum CAS evolution"},
+    "PROJECTION_TRUTH_CLOSED": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "evidence-tracked role position preserves no Lockheed affiliation/adoption, no production PKI/KMS, no cloud durability/replication, and no distributed quorum claim"},
+    "ROLE_POSITION_EVIDENCED": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "machine/role-position.json records evidence-binding-gateway lineage while binding signed source quorum CAS evolution"},
     "EVOLUTION_CURSOR_DEFINED": {"status": "PASS", "at": "2026-08-11T22:39Z", "evidence": "next:remote_kms_pki_identity_source_key_revocation_freshness_provider_attested_object_store_replication_and_distributed_source_quorum_reconciliation"},
     "problem_verified": true,
     "unique_value_known": true,
-    "canonical_identity_known": true,
+    "system_identity_known": true,
     "central_mechanism_implemented": true,
     "deterministic_tests_pass": true,
     "adversarial_tests_pass": true,
@@ -42,8 +42,8 @@
     {"at": "2026-08-10T06:25Z", "from": "ADVERSARIAL_VERIFIED", "to": "OPERABLE", "gate": "OPERABLE_AND_OBSERVABLE", "result": "PASS", "note": "scripts/operate.py dual-run PASS; primary ok"},
     {"at": "2026-08-10T06:25Z", "from": "OPERABLE", "to": "PROOF_REPRODUCED", "gate": "PROOF_RECEIPT_BOUND", "result": "PASS", "note": "machine/proof_receipt.json bound"},
     {"at": "2026-08-10T06:25Z", "from": "PROOF_REPRODUCED", "to": "PROMOTED", "gate": "AUTHORITY_BOUND", "result": "PASS", "note": "promotion_authority + PROJECTION_TRUTH_CLOSED"},
-    {"at": "2026-08-10T10:42Z", "from": "PROMOTED", "to": "CANONICAL", "gate": "CANONICAL_POSITION_RESOLVED", "result": "PASS", "note": "source and triad lineage resolve evidence-binding-gateway as the owning specialist for content/version-bound evidence authorization"},
-    {"at": "2026-08-10T10:42Z", "from": "CANONICAL", "to": "EVOLVING", "gate": "EVOLUTION_CURSOR_DEFINED", "result": "PASS", "note": "add signed evidence-source identities, freshness policy, external content-addressed snapshot storage, and source quorum while preserving deterministic drift refusal"}
+    {"at": "2026-08-10T10:42Z", "from": "PROMOTED", "to": "ROLE_POSITIONED", "gate": "ROLE_POSITION_EVIDENCED", "result": "PASS", "note": "source and triad lineage evidence identify evidence-binding-gateway as a specialist implementation for content/version-bound evidence authorization"},
+    {"at": "2026-08-10T10:42Z", "from": "ROLE_POSITIONED", "to": "EVOLVING", "gate": "EVOLUTION_CURSOR_DEFINED", "result": "PASS", "note": "add signed evidence-source identities, freshness policy, external content-addressed snapshot storage, and source quorum while preserving deterministic drift refusal"}
   ],
   "evolution_history": [
     {
@@ -57,7 +57,7 @@
   ],
   "contract_ref": "machine/target-contract.json",
   "scores_ref": "machine/excellence-scores.json",
-  "canonical_position_ref": "machine/canonical-position.json",
+  "role_position_ref": "machine/role-position.json",
   "capabilities_ref": "machine/capabilities.json",
   "evolution_cursor": "next:remote_kms_pki_identity_source_key_revocation_freshness_provider_attested_object_store_replication_and_distributed_source_quorum_reconciliation",
   "wave": {
@@ -69,7 +69,7 @@
     "history_repaired_at": "2026-08-10T06:12Z",
     "history_source": "monolith-legal-hops",
     "projection_truth_closed_at": "2026-08-10T06:25Z",
-    "canonical_position_resolved_at": "2026-08-10T10:42Z",
+    "role_position_evidenced_at": "2026-08-10T10:42Z",
     "policy": "glaciereq.repo-excellence.promotion-policy.v1"
   },
   "state": "EVOLVING",

@@ -1,10 +1,10 @@
 {
-  "schema": "glaciereq.repo-canonical-position.v1",
+  "schema": "glaciereq.repo-role-position.v1",
   "repository": "GlacierEQ/lockheed-evidence-binding-gateway",
-  "position_state": "RESOLVED",
+  "position_state": "EVIDENCE_TRACKED",
   "role": "company_specific_specialist_system",
   "company_target": "Lockheed Martin",
-  "canonical_identity": "evidence-binding-gateway",
+  "system_identity": "evidence-binding-gateway",
   "unique_value": [
     "authorization is bound to immutable evidence content hashes and monotonic evidence versions rather than mutable evidence identifiers alone",
     "single- and multi-evidence decisions fail closed when evidence disappears changes content or advances version after binding",
@@ -34,7 +34,7 @@
       "externalized content-addressed evidence readback",
       "post-bind CAS tamper and missing-object refusal"
     ],
-    "ownership": "This repository remains the owning Lockheed-specialist implementation of evidence-bound action authorization; capability extraction preserves repository identity and lineage."
+    "ownership": "This repository contributes the Lockheed-specialist implementation of evidence-bound action authorization; future evidence can refine the role while preserving repository identity and lineage."
   },
   "integration_policy": {
     "preserve_repository_identity": true,

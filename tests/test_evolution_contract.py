@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "machine" / "excellence-state.json"
 TARGET_PATH = ROOT / "machine" / "target-contract.json"
-POSITION_PATH = ROOT / "machine" / "canonical-position.json"
+POSITION_PATH = ROOT / "machine" / "role-position.json"
 RECEIPT_PATH = (
     ROOT
     / "machine"

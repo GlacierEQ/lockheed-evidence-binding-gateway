@@ -30,7 +30,7 @@
     "tests/test_adversarial.py",
     "machine/evolution-receipts/2026-08-11-signed-source-quorum-cas.json",
     "machine/proof_receipt.json",
-    "machine/canonical-position.json"
+    "machine/role-position.json"
   ],
   "truth_boundary": "Repository-local evidence-binding mechanisms over configured reference identity and storage providers. No Lockheed Martin adoption, production mission-assurance deployment, production PKI/KMS identity, live source-key revocation feed, provider-managed cloud object-store replication/durability, distributed quorum reconciliation, or exercised integration with sibling repositories is implied."
 }
